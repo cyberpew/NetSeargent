@@ -2,6 +2,9 @@
 
 package pw.cybr.netseargent.commands;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.pircbotx.hooks.ListenerAdapter;
 import org.pircbotx.hooks.events.MessageEvent;
 
@@ -16,9 +19,13 @@ public class Ping extends ListenerAdapter {
 				
 				Ping obj = new Ping();
 				String command = "ping -c " + count + " " + host;
-				String output = CommandHandler.executeCommand(command);
+				List<String> output = (List<String>)CommandHandler.executeCommand(command);
 				
-				e.getBot().sendMessage(e.getChannel(), output);
+				for(String temp : output)
+				{
+					e.getBot().sendMessage(e.getChannel(), temp);
+				}
+
 			} else {
 				e.getBot().sendMessage(e.getChannel(), "[NetSeargent] Usage: ^ping <host/ip> <times to ping>");
 			}
