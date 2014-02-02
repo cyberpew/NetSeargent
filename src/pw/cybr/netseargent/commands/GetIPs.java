@@ -10,7 +10,7 @@ import org.pircbotx.hooks.events.MessageEvent;
 public class GetIPs extends ListenerAdapter {
 	
 	public void onMessage(MessageEvent e) throws Exception {
-		if (e.getMessage().startsWith("^listip")) {
+		if (e.getMessage().startsWith("^listips") || e.getMessage().startsWith("^getips")) {
 			String[] args = e.getMessage().split(" ");
 			if (args.length == 2) {
 				String host = args[1];

@@ -72,5 +72,6 @@ public class NetSeargent {
 	public static void loadListeners() throws Exception {
 		//TODO: Declare command modules here
 		bot.getListenerManager().addListener(new Ping());
+		bot.getListenerManager().addListener(new GetIPs());
 	}
 }
