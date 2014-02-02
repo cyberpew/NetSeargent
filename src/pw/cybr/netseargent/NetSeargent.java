@@ -31,6 +31,7 @@ public class NetSeargent {
 		} catch (IOException ex) {
 			ex.printStackTrace();
 		}
+		System.out.println("[NetSeargent] Initializing... ");
 		
 		// Begin initialization of bot
 		bot.setAutoNickChange(true); // Make the bot change nickname if the requested nickname is taken upon join
@@ -55,6 +56,8 @@ public class NetSeargent {
 		
 		loadChannels(); // Connect to the channels stated in the configuration file
 		loadListeners(); // Load listeners (such as commands/features of the bot)
+		
+		System.out.print("[NetSeargent] Connected to " + ConfigHandler.server + " as " + ConfigHandler.nickname);
 	}
 	
 	// Handles joining to auto-connect channels upon connection
