@@ -7,6 +7,8 @@ import java.io.IOException;
 import org.pircbotx.PircBotX;
 import org.pircbotx.UtilSSLSocketFactory;
 
+import pw.cybr.netseargent.commands.*;
+
 public class NetSeargent {
 	
 	public static PircBotX bot = new PircBotX();
@@ -69,5 +71,6 @@ public class NetSeargent {
 	
 	public static void loadListeners() throws Exception {
 		//TODO: Declare command modules here
+		bot.getListenerManager().addListener(new Ping());
 	}
 }
