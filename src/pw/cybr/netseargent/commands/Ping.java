@@ -17,12 +17,10 @@ public class Ping extends ListenerAdapter {
 				String host = args[1];
 				String count = args[2];
 				
-				Ping obj = new Ping();
 				String command = "ping -c " + count + " " + host;
 				List<String> output = (List<String>)CommandHandler.executeCommand(command);
 				
-				for(String temp : output)
-				{
+				for(String temp : output) {
 					e.getBot().sendMessage(e.getChannel(), temp);
 				}
 
